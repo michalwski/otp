@@ -183,7 +183,7 @@ mac_hash(Method, Mac_write_secret, Seq_num, Type, {Major, Minor},
 
 -spec suites(1|2|3) -> [ssl_cipher:cipher_suite()].
 
-suites(Minor) when Minor == 1; Minor == 2 ->
+suites(Minor) when Minor == 1; Minor == 2->
     [
       ?TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
       ?TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,

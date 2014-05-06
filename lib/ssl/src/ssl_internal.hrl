@@ -62,6 +62,8 @@
 
 -define(DEFAULT_TIMEOUT, 5000).
 
+-define(PKIX_DB_HASH, sha).
+
 %% Common enumerate values in for SSL-protocols 
 -define(NULL, 0).
 -define(TRUE, 0).

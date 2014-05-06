@@ -428,7 +428,7 @@ shutdown(#sslsocket{pid = Pid}, How) ->
 %%
 %% Description: Same as inet:sockname/1
 %%--------------------------------------------------------------------
-sockname(#sslsocket{pid = {Listen,  #config{transport_info = {Transport, _, _, _}}}}) when is_port(Listen) ->
+sockname(#sslsocket{pid = {Listen,  #config{transport_info = {Transport,_, _, _}}}}) when is_port(Listen) ->
     ssl_socket:sockname(Transport, Listen);
 
 sockname(#sslsocket{pid = Pid, fd = {Transport, Socket, _, _}}) when is_pid(Pid) ->
@@ -608,7 +608,7 @@ handle_options(Opts0) ->
 
     {Verify, FailIfNoPeerCert, CaCertDefault, VerifyFun, PartialChainHanlder} =
 	handle_verify_options(Opts, CaCerts),
-    
+
     CertFile = handle_option(certfile, Opts, <<>>),
     RecordCb = record_cb(Opts),
     
@@ -1044,7 +1044,7 @@ record_cb(tls) ->
 record_cb(dtls) ->
     dtls_record;
 record_cb(Opts) ->
-    record_cb(proplists:get_value(protocol, Opts, tls)).
+   record_cb(proplists:get_value(protocol, Opts, tls)).
 
 connection_sup(tls_connection) ->
     tls_connection_sup;
